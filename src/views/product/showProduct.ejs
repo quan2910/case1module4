@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <%- include('../partial/style') %>
+</head>
+<body>
+<%- include('../partial/navbar') %>
+<div class="container-fluid">
+    <div class="col-12">
+        <div class="row mt-5">
+            <div class="col-8">
+                <div class="row tn-row f-flex justify-content-center">
+                    <div class=" col-12 pb-5">
+                        <div class="product-item position-relative bg-light d-flex flex-column text-center">
+                            <img class="img-fluid mb-4 " src="<%= listProduct.image %>" style="width: 100%" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <h2 class="text-uppercase"><%= listProduct.name %></h2>
+                <h3 class="text-primary mb-0">$<%= listProduct.price %></h3>
+                <h5 class="text-primary mb-3">Quantity: <%= listProduct.quantity %></h5>
+                <h5 class="text-primary mb-3">Description: <%= listProduct.description %></h5>
+                <h5 class="text-primary mb-3">Type: <%= listProduct.nameC %></h5>
+                <div class="btn-action d-flex">
+                    <a class="btn btn-primary py-2 px-3" href="/edit/<%= listProduct.id %>">Edit</a>
+                    <a class="btn btn-primary py-2 px-3" href="/delete/<%= listProduct.id %>">Delete</a>
+                    <a class="btn btn-primary py-2 px-3" href="/products">Buy</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('../partial/footer') %>
+<%- include('../partial/js') %>
+</body>
+</html>

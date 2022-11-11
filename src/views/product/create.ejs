@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>PET SHOP - Pet Shop Website Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+
+    <%- include('../partial/style') %>
+</head>
+<body>
+
+<%- include('../partial/navbar') %>
+
+<div class="container-fluid pt-5">
+    <div class="container">
+        <div class="border-start border-5 border-primary ps-5 mb-5" style="max-width: 600px;">
+            <h6 class="text-primary text-uppercase">Sell a Pet</h6>
+            <h1 class="display-5 text-uppercase mb-0">Some information about your Pet</h1>
+        </div>
+        <div class="row g-5">
+            <div class="col-lg-7">
+                <form action="/create" method="post" enctype="multipart/form-data">
+                    <div class="row g-3">
+                        <div class="col-12">
+                            <input type="text" class="form-control bg-light border-0 px-4" placeholder="Pet Name" name="name" style="height: 55px;">
+                        </div>
+                        <div class="col-12">
+                            <input type="number" class="form-control bg-light border-0 px-4" placeholder="Price" name="price" style="height: 55px;">
+                        </div>
+                        <div class="col-12">
+                            <input type="number" class="form-control bg-light border-0 px-4" placeholder="Quantity" name="quantity" style="height: 55px;">
+                        </div>
+                        <div class="col-12">
+                            <input type="file" class="form-control bg-light border-0 px-4" name="image" style="height: 55px;">
+                        </div>
+                        <div class="col-12">
+                            <textarea class="form-control bg-light border-0 px-4 py-3" rows="8" name="description" placeholder="Description"></textarea>
+                        </div>
+                        <div class="col-12">
+                            <select name="idCategory">
+                                <% for (let i = 0; i < listCategory.length; i++) { %>
+                                    <option value="<%= listCategory[i].idC %>"><%= listCategory[i].nameC %></option>
+                                <% }%>
+                            </select>
+<!--                            <input class="form-control bg-light border-0 px-4 py-3" rows="8" name="idCategory" placeholder="idCat"></input>-->
+                        </div>
+                        <div class="col-12">
+                            <button class="btn btn-primary w-100 py-3" type="submit">SELL</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('../partial/footer') %>
+
+<%- include('../partial/js') %>
+</body>
+</html>
